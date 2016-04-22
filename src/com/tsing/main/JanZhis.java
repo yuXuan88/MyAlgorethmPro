@@ -49,6 +49,30 @@ public class JanZhis {
         return  data;
     }
 
+    public  void  complete12withInductive(int n) {
+            if (n<1)
+                return;
+            String data = "";
+        while (n-->0) {
+            data += "0";
+        }
+            for (int i = 0; i < 10 ; i ++) {
+                data = i+data.substring(1);
+                inductiveFunc(0, data);
+            }
+    }
+
+    private  void inductiveFunc(int bit , String data) {
+        if (bit == data.length()-1) {
+            System.err.println(data);
+            return;
+        }
+        for (int i = 0; i < 10; i++) {
+            data = data.substring(0,bit+1) +i+ data.substring(bit + 2);
+            inductiveFunc(bit+1, data);
+        }
+
+    }
 
 
 }

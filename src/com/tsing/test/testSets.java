@@ -10,7 +10,8 @@ public class testSets extends TestCase {
 
     public  void  test12() {
         JanZhis  janZhis = new JanZhis();
-        janZhis.complete12(7);
+      //  janZhis.complete12(2);
+        janZhis.complete12withInductive(2);
 
     }
 
